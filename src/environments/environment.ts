@@ -4,5 +4,7 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  origin :'http://localhost:3000',
+  asset : 'https://s3-us-west-2.amazonaws.com/real-city-assets'
 };

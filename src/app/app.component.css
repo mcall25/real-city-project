@@ -27,6 +27,41 @@
   margin-bottom: 5px;
 }
 
+.mrg-btm-5 {
+  margin-bottom: 5px;
+}
+
+.margin-bottom-12p {
+  margin-bottom: 12%;
+}
+
+/* ############ standard margin top sizes (Largest to Smallest) for the entire app  #################### */
+.mrg-tp-5 {
+  margin-top: 5px;
+}
+
+/* ############ standard margin left sizes (Largest to Smallest) for the entire app  #################### */
+.mrg-lft-10 {
+  margin-left: 10px;
+}
+
+/* ############ standard padding sizes (Largest to Smallest) for the entire app  #################### */
+.xs-pd {
+  padding: 2px;
+}
+
+.sm-pd {
+  padding: 5px;
+}
+
+.md-pd {
+  padding: 10px;
+}
+
+.pd-btm-50 {
+  padding-bottom: 50px;
+}
+
 /* ############ standard google places autocomplete #################### */
 .ap-input::-ms-clear {
   display: none;

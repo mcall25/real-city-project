@@ -2,6 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule,Routes } from '@angular/router'
 import {HttpModule} from '@angular/http';
+import { OrderBy } from './orderby-pipe';
+import { FormsModule } from '@angular/forms';
+
 
 
 
@@ -22,11 +25,13 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     HomeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    OrderBy
   ],
   imports: [
     BrowserModule,
     HttpModule,
+    FormsModule,
     RouterModule.forRoot(appRoutes, {initialNavigation: 'enabled'}),
   ],
   providers: [getDataService],

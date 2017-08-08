@@ -1,7 +1,7 @@
 
   <!--// ############ fixed header bar home page #################### //-->
 
-  <nav class="navbar fixed-top margin-bottom-150 navbar-inverse bg-inverse">
+  <nav class="navbar margin-bottom-12p navbar-inverse bg-inverse">
     <div class="container">
       <a class="navbar-brand home-logo-width" href="#"><img style="width: 100%;" src="../../assets/realcitylogo.png" alt=""></a>
     </div>
@@ -15,31 +15,34 @@
       <div class="col-xs-10 col-xs-offset-1 text-center">
         <div class="font-weight-bold font-size-14 margin-bottom-5">Discover Weather City is Currently a Buyer's or Seller's Market</div>
         <div>Wait until the Idea Market Temperature. Where Would you like to Buy or Sell?</div>
+
       </div>
     </div>
   </div>
 
 
+
   <!--// ############ search bar container #################### //-->
 
   <div class="container">
-    <div class="row">
-      <div class="form-group col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 text-center">
-        <input
-          type="text"
-          id="search"
-          #location
-         (keyup)="getPredictions(location.value)"
-          class="form-control standard-input-styles">
+    <div class="pd-btm-50">
+      <div class="row">
+        <div class="form-group col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 text-center">
+          <input
+            type="text"
+            [(ngModel)]="filterargs.title"
+            (ngModelChange)="onCityChange()"
+            class="form-control standard-input-styles"/>
 
-          <div class="search-rts-box">
-            <div *ngFor="let city of cities; let index=index; let odd=odd; let even=even; let first=first" [ngClass]="{'even-row': even, 'odd-row': odd}">
-              <div class="text-left">
-                <div class="">{{city}}</div>
+          <div *ngIf="searchPredictions" class="search-rts-box">
+            <div *ngFor="let city of cities | orderBy:filterargs let index=index; let odd=odd; let even=even; let first=first" [ngClass]="{'even-row': even, 'odd-row': odd}">
+              <div class="text-left mrg-btm-5 mrg-lft-10" [ngClass]="{'mrg-tp-5': first}">
+                <div class="">{{city.title}}</div>
               </div>
             </div>
           </div>
 
+        </div>
       </div>
     </div>
   </div>

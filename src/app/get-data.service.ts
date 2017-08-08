@@ -14,12 +14,29 @@ export class getDataService {
   //   return this.http.get('https://maps.googleapis.com/maps/api/place/autocomplete/json?input=Paris&types=geocode&key=AIzaSyAnqpYuuFQVg0PRzasob4BdNWZ58rArRKg');
   // }
 
-  getCities(value) {
-    return this.http.get('https://maps.googleapis.com/maps/api/place/autocomplete/json?input=Paris&types=geocode&key=AIzaSyDrzX2pFc5mTwnwwA2cqXKo2nLVV2Zkq5I')
-      .toPromise()
-      .then(response => response.json().data)
+  cities:any = [
+    {title: 'Provo Utah'},
+    {title: 'South Jordan'},
+    {title: 'Hebber'},
+    {title: 'Murray'},
+    {title: 'West Jordan'},
+    {title: 'Bothell'},
+    {title: 'Brownsville'},
+    {title: 'Bird'},
+    {title: 'Martin Cove'},
+    {title: 'Riverton'},
+    {title: 'New York'},
+    {title: 'Seattle'},
+    {title: 'San Fransico'},
+    {title: 'Colorado Springs'},
+  ]
 
+  getCities() {
+    return this.cities
   }
+
+
+
 
 
 }

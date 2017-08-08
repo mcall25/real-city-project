@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {environment} from "../../environments/environment";
 import {getDataService} from "../get-data.service";
+import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
+import {isUndefined} from "util";
+
 
 
 @Component({
@@ -14,21 +17,36 @@ export class HomeComponent implements OnInit {
   places:any
   cities:any
 
+  // variables for the home page
+  filterargs:any;
+  searchPredictions:boolean = false;
+
+
   constructor(private getDataService: getDataService ) { }
 
   ngOnInit() {
 
-    this.cities = ["Provo Utah", "South Jordan", "Salt Lake City"]
+    this.filterargs = {
+      title: ''
+    }
+
+    this.cities = this.getDataService.getCities()
+
     // ############ image assets for the home page #################### //
     this.homeLogo = environment.asset + "/realcitylogo.png";
+
   }
 
 
+  onCityChange() {
 
-  getPredictions(value): void {
-    return null
+    if (this.filterargs.title !== '' && this.filterargs.title !== null && this.filterargs.title !== undefined ) {
+      this.searchPredictions = true
+    }
+    else {
+      this.searchPredictions = false
+    }
   }
-
 
 
 }

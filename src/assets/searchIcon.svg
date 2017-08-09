@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="15px" height="16px" viewBox="0 0 15 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
+    <title>searchIcon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Customer/Lead-Search-Copy" transform="translate(-56.000000, -248.000000)">
+            <g id="search-icon" transform="translate(49.000000, 241.000000)">
+                <g id="Group-8" transform="translate(15.319727, 15.812754) rotate(-40.000000) translate(-15.319727, -15.812754) translate(9.819727, 6.312754)">
+                    <ellipse id="Oval-7" stroke="#979797" cx="5.48381552" cy="5.86912882" rx="5.34099725" ry="5.24388821"></ellipse>
+                    <rect id="Rectangle-20" fill="#979797" x="4.3855902" y="10.9639755" width="2.01006217" height="7.34362003" rx="1.00503109"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

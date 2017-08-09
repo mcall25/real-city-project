@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {environment} from "../../environments/environment";
 import {getDataService} from "../get-data.service";
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
-import {isUndefined} from "util";
+import { Router, ActivatedRoute } from '@angular/router';
 
 
 
@@ -13,22 +13,23 @@ import {isUndefined} from "util";
 })
 export class HomeComponent implements OnInit {
 
+
+
+  // variables for the home page
   homeLogo:string
   places:any
   cities:any
-
-  // variables for the home page
   filterargs:any;
   searchPredictions:boolean = false;
 
 
-  constructor(private getDataService: getDataService ) { }
+  constructor(private getDataService: getDataService,
+              private router:Router,
+              private route:ActivatedRoute,) { }
 
   ngOnInit() {
 
-    this.filterargs = {
-      title: ''
-    }
+    this.filterargs = { title: '' }
 
     this.cities = this.getDataService.getCities()
 
@@ -46,6 +47,13 @@ export class HomeComponent implements OnInit {
     else {
       this.searchPredictions = false
     }
+  }
+
+  onSelectCity(city) {
+
+    this.router.navigate(['city-details'])
+    this.getDataService.saveCity(city)
+
   }
 
 

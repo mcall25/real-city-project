@@ -28,15 +28,16 @@
     <div class="pd-btm-50">
       <div class="row">
         <div class="form-group col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 text-center">
+         <div class="search-icon"><img style="width: 100%" src="../../assets/searchIcon.svg" alt=""></div>
           <input
             type="text"
             [(ngModel)]="filterargs.title"
             (ngModelChange)="onCityChange()"
-            class="form-control standard-input-styles"/>
+            class="form-control app-standard-input-styles"/>
 
           <div *ngIf="searchPredictions" class="search-rts-box">
-            <div *ngFor="let city of cities | orderBy:filterargs let index=index; let odd=odd; let even=even; let first=first" [ngClass]="{'even-row': even, 'odd-row': odd}">
-              <div class="text-left mrg-btm-5 mrg-lft-10" [ngClass]="{'mrg-tp-5': first}">
+            <div *ngFor="let city of cities | orderBy:filterargs let index=index" (click)="onSelectCity(city)" class="city-hover">
+              <div class="text-left pd-tp-5 pd-btm-5 mrg-lft-10" >
                 <div class="">{{city.title}}</div>
               </div>
             </div>

@@ -1,0 +1,6 @@
+.scale-icon { width: 100%}
+
+.justify-center {
+  display: flex;
+  justify-content: center;
+}

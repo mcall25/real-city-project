@@ -12,11 +12,13 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { getDataService } from './get-data.service';
+import { CityDetailComponent } from './city-detail/city-detail.component';
 
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
+  { path: 'city-details', component: CityDetailComponent },
   { path: 'not-found', component: PageNotFoundComponent },
   { path: '**', redirectTo: '/not-found' }
 ];
@@ -26,7 +28,8 @@ const appRoutes: Routes = [
     AppComponent,
     HomeComponent,
     PageNotFoundComponent,
-    OrderBy
+    OrderBy,
+    CityDetailComponent
   ],
   imports: [
     BrowserModule,

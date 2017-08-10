@@ -4,3 +4,62 @@
   display: flex;
   justify-content: center;
 }
+
+
+.bck-color-e6e6e6 {
+  background-color: #e6e6e6;
+}
+
+.opacity {
+  opacity: .8;
+}
+
+.score-text-styles {
+  font-size: 25px;
+  color: red;
+}
+
+.city-title-styles {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.city-info-title-styles {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.border {
+  border: 1px solid #444444;
+}
+
+
+.width-50 {
+  width: 50%;
+}
+
+.border-btm {
+  border-bottom: 1px solid #444444;
+}
+
+.text-data-styles {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+.hr-line {
+  background-color: black;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  border: 1px solid;
+  width: 80%;
+}
+
+.border-right {
+  border-right: 2px solid #444444;
+}
+
+.text-data-title-styles {
+  font-size: 15px;
+}

@@ -19,6 +19,10 @@
     margin-bottom: 150px;
   }
 
+  .mrg-btm-50 {
+    margin-bottom: 50px;
+  }
+
   .mrg-btm-30 {
     margin-bottom: 30px;
   }
@@ -68,6 +72,10 @@
 
   .sm-pd {
     padding: 5px;
+  }
+
+  .pd-all-8 {
+    padding: 8px;
   }
 
   .md-pd {

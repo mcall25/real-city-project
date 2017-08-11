@@ -11,6 +11,39 @@
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
     transition: box-shadow 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
     vertical-align: top;
+    border-radius: 6px;
+  }
+
+  .adv-input-box {
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+    width:100%;
+    border: 1px solid #f9f9f9;
+    border-radius: 2px;
+  }
+
+  .label-styles {
+    font-size: 8pt;
+    color: #afafaf;
+    font-weight: lighter;
+  }
+
+  .search-btn {
+    position: absolute;
+    right: 15px;
+    background-color: #e4e4e4;
+    height: 35px;
+    width: 60px;
+    border-bottom-right-radius: 6px;
+    border-top-right-radius: 6px;
+    border: 1px solid #f9f9f9;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+  }
+
+  .flex-shape {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
   }
 
 
@@ -33,6 +66,10 @@
 
   .margin-bottom-12p {
     margin-bottom: 12%;
+  }
+
+  .margin-bottom-8 {
+    margin-bottom: 8px;
   }
 
   .margin-bottom-5 {
@@ -80,6 +117,10 @@
 
   .md-pd {
     padding: 10px;
+  }
+
+  .pd-20 {
+    padding: 20px;
   }
 
   .pd-btm-50 {
@@ -131,4 +172,14 @@
   .font-size-14 {font-size: 14px}
 
   /*search box*/
-  .search-icon { width: 25px; position: absolute; right: 30px;  top: 4px;}
+  .search-icon {
+    width: 25px;
+    position: absolute;
+    top: 2px;
+    right: 15px;
+  }
+
+  .adv-btn {
+    background-color: #444444;
+    color: white;
+  }

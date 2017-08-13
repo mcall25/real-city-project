@@ -63,3 +63,19 @@
 .text-data-title-styles {
   font-size: 15px;
 }
+
+
+.search-rts-box {
+  width: 96%;
+  height: 200px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-top-color: #d9d9d9;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  -webkit-box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  cursor: default;
+  position: absolute;
+  z-index: 100;
+}
+
+.city-hover:hover { background-color: #e4e4e4 }

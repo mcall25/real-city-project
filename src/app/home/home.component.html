@@ -3,7 +3,7 @@
 
   <nav class="navbar margin-bottom-12p navbar-inverse bg-inverse">
     <div class="container">
-      <a class="navbar-brand home-logo-width" href="#"><img style="width: 100%;" src="../../assets/realcitylogo.png" alt=""></a>
+      <a class="navbar-brand home-logo-width" routerLink="/home"><img style="width: 100%;" src="../../assets/realcitylogo.png" alt=""></a>
     </div>
   </nav>
 
@@ -13,8 +13,8 @@
   <div class="container margin-bottom-25">
     <div class="row">
       <div class="col-xs-10 col-xs-offset-1 text-center">
-        <div class="font-weight-bold font-size-14 margin-bottom-5">Discover Weather City is Currently a Buyer's or Seller's Market</div>
-        <div>Wait until the Idea Market Temperature. Where Would you like to Buy or Sell?</div>
+        <div class="font-weight-bold font-size-18 margin-bottom-5">Discover Weather a City is Currently a Buyer's or Seller's Market</div>
+        <div class="font-size-12">Wait until the Idea Market Temperature. Where Would you like to Buy or Sell?</div>
 
       </div>
     </div>
@@ -37,7 +37,7 @@
             (ngModelChange)="onCityChange()"
             class="form-control app-standard-input-styles"/>
 
-          <div *ngIf="searchPredictions" class="search-rts-box">
+          <div *ngIf="searchPredictions" class="search-rts-box overflow-scroll">
             <div *ngFor="let city of cities | orderBy:filterargs let index=index" (click)="onSelectCity(city)" class="city-hover">
               <div class="text-left pd-tp-5 pd-btm-5 mrg-lft-10" >
                 <div class="">{{city.title}}</div>

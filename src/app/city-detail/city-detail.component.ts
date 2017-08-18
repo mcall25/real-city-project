@@ -29,10 +29,10 @@ export class CityDetailComponent implements OnInit {
     this.selectedCity = this.getDataService.getSelectedCity()
 
     if (this.selectedCity.score > 5) {
-      this.buyOrSell = 'buyers'
+      this.buyOrSell = 'Buyers'
     }
     else {
-      this.buyOrSell = 'sellers'
+      this.buyOrSell = 'Sellers'
     }
 
 

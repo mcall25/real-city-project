@@ -75,6 +75,10 @@
     margin-bottom: 25px;
   }
 
+  .margin-bottom-15 {
+    margin-bottom: 15px;
+  }
+
   .margin-bottom-12p {
     margin-bottom: 12%;
   }
@@ -246,6 +250,20 @@
     color: white;
   }
 
+  .flex-center-all {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .adv-image {
+    width: 300px;
+  }
+
+  .text-sm-white {
+    color: white;
+  }
+
   .left-xs {
     left:10%;
   }
@@ -289,10 +307,6 @@
   .left-9 {
     left:80%;
   }
-
-
-
-
 
   .sleft-xs {
     left:15%;

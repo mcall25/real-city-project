@@ -224,9 +224,10 @@
 
   .scale-indicator {
     position: absolute;
-    top: 1px;
-    width: 3px;
-    height: 73%;
+    top: 0px;
+    width: 7px;
+    height: 80%;
+    border-radius: 50px;
     background-color: #f9f9f9;
 
     background: -webkit-radial-gradient(#444444, #e4e4e4, #f9f9f9); /* Safari 5.1 to 6.0 */
@@ -312,7 +313,7 @@
   .sleft-1 {
     left:7.5%;
   }
-  .left-2 {
+  .sleft-2 {
     left:17.5%;
   }
   .sleft-3 {

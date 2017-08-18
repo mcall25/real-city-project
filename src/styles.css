@@ -78,5 +78,8 @@ table {
 
 .main-backgrnd-image {
   background-image: url("/assets/dallas-skyline-grey.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   background-size: cover;
 }

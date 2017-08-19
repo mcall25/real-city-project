@@ -11,7 +11,12 @@
   <!--// ############ search bar container #################### //-->
 
   <div class="container">
-    <div class="pd-btm-50">
+    <div class="margin-bottom-100">
+      <div class="row margin-bottom-15">
+        <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 text-center">
+          <div class="font-weight-bold font-size-18 margin-bottom-5">Discover Whether a City is Currently a Buyer's or Seller's Market</div>
+        </div>
+      </div>
       <div class="row">
         <div class="form-group col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 text-center">
           <div class="search-btn">
@@ -21,10 +26,11 @@
             type="text"
             [(ngModel)]="filterargs.title"
             (ngModelChange)="onCityChange()"
+            placeholder="Search for a City"
             class="form-control app-standard-input-styles"/>
 
           <div *ngIf="searchPredictions" class="search-rts-box overflow-scroll">
-            <div *ngFor="let city of cities | orderBy:filterargs let index=index" (click)="onSelectCity(city)"  class="city-hover">
+            <div *ngFor="let city of cities | orderBy:filterargs; let index=index" (click)="onSelectCity(city)"  class="city-hover">
               <div class="text-left pd-tp-5 pd-btm-5 mrg-lft-10" >
                 <div class="">{{city.title}}</div>
               </div>
@@ -51,7 +57,7 @@
            <div class="col-xs-6 text-right">
              <div class="score-text-styles">{{selectedCity.score}}</div>
              <div>Out of 10</div>
-             <div>Hot Market</div>
+             <div>{{buyersorsellers}} Market</div>
            </div>
          </div>
          <div class="row">
@@ -115,6 +121,18 @@
   <!--</div>-->
 <!--</div>-->
 
+<!--// ############ hr line  #################### //-->
+
+<div class="container">
+  <div class="row margin-bottom-15">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+      <hr class="hrLine">
+    </div>
+  </div>
+</div>
+
+
+
 
 <!--// ############ advertise with us  #################### //-->
 
@@ -130,7 +148,9 @@
                   <div class="city-info-title-styles margin-bottom-15">This City is a {{buyOrSell}} Market</div>
                   <div class="margin-bottom-5 text-sm-white">The current average home price is $xxx,xxxx</div>
                   <div class="margin-bottom-15 text-sm-white">Want to learn more about this market? Want to advertise with us?</div>
-                  <button type="submit" class="btn adv-btn">Learn More</button>
+                  <form action="/email" method="get">
+                    <button type="submit" class="btn adv-btn">Learn More</button>
+                  </form>
                 </div>
               </div>
               <div class="col-xs-6 ">

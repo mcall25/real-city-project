@@ -2,7 +2,7 @@
  * Created by codev on 7/25/17.
  */
 import {Injectable} from "@angular/core";
-import { Http } from '@angular/http';
+import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 import { Router, ActivatedRoute } from '@angular/router';
 
@@ -185,6 +185,12 @@ export class getDataService {
       return  { name: "none", score: 0.1, zmv: "–", zmlp: 155000, mls: 108, al: 21 }
     }
   }
+
+  sendEmail() {
+    console.log('hitting the endpint')
+    return this.http.get('http://localhost:3000/email');
+  }
+
 
 }
 

@@ -17,6 +17,7 @@ export class CityDetailComponent implements OnInit {
   cities:any;
   searchPredictions:any;
   buyOrSell:any;
+  buyersorsellers:any;
 
   constructor(private getDataService: getDataService,
               private router:Router,
@@ -30,9 +31,11 @@ export class CityDetailComponent implements OnInit {
 
     if (this.selectedCity.score > 5) {
       this.buyOrSell = 'Buyers'
+      this.buyersorsellers = 'Buyers'
     }
     else {
       this.buyOrSell = 'Sellers'
+      this.buyersorsellers = 'Sellers'
     }
 
 
@@ -55,12 +58,18 @@ export class CityDetailComponent implements OnInit {
 
     if (this.selectedCity.score > 5) {
       this.buyOrSell = 'buy'
+      this.buyersorsellers = 'Buyers'
     }
     else {
       this.buyOrSell = 'sell'
+      this.buyersorsellers = 'Sellers'
     }
 
     this.searchPredictions = false
+  }
+
+  sendEmail() {
+    this.getDataService.sendEmail()
   }
 
 }

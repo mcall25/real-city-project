@@ -1,11 +1,13 @@
 /**
  * Created by codev on 7/27/17.
  */
+'use strict';
 var express = require('express');
 var cors = require('cors');
 var bodyParser = require('body-parser');
 var massive = require('massive');
 var mysql = require('mysql');
+const nodemailer = require('nodemailer');
 
 
 var connection = mysql.createConnection({
@@ -32,15 +34,44 @@ const app = express()
 // app.use(express.static(__dirname + '/src'));
 
 
-connection.query('SELECT * from Persons', function (err, rows, fields) {
-  if (err) {
-    throw err
+// create reusable transporter object using the default SMTP transport
+var transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: "callmichael.bus@gmail.com",
+    pass: "watermelon1"
   }
-  else {
-    console.log(rows)
-  }
+});
 
-})
+// setup email data with unicode symbols
+var mailOptions = {
+  from: '"Fred Foo 👻" <foo@blurdybloop.com>', // sender address
+  to: 'callmichael.bus@gmail.com', // list of receivers
+  subject: 'Hello ✔', // Subject line
+  text: 'Hello world sent from the front end', // plain text body
+  html: '<b>Hello world ?</b>' // html body
+};
+
+
+// verify connection configuration
+transporter.verify(function(error, success) {
+  if (error) {
+    console.log(error);
+  } else {
+    console.log('Server is ready to take our messages');
+  }
+});
+
+
+app.get('/email', function() {
+  transporter.sendMail(mailOptions, function(error, info) {
+    if (error) {
+      return console.log(error);
+    }
+    console.log('Message %s sent: %s', info.messageId, info.response);
+    return {type: true}
+  })
+});
 
 // app.get('/', function (req, res) {
 //   connection.query("SELECT * FROM `Persons`;",function (error, row){

@@ -13,7 +13,7 @@
   <div class="container margin-bottom-25">
     <div class="row">
       <div class="col-xs-10 col-xs-offset-1 text-center">
-        <div class="font-weight-bold font-size-18 margin-bottom-5">Discover Weather a City is Currently a Buyer's or Seller's Market</div>
+        <div class="font-weight-bold font-size-18 margin-bottom-5">Discover Whether a City is Currently a Buyer's or Seller's Market</div>
         <div class="font-size-12">Wait until the Idea Market Temperature. Where Would you like to Buy or Sell?</div>
 
       </div>
@@ -35,6 +35,7 @@
             type="text"
             [(ngModel)]="filterargs.title"
             (ngModelChange)="onCityChange()"
+            placeholder="Search for a City"
             class="form-control app-standard-input-styles"/>
 
           <div *ngIf="searchPredictions" class="search-rts-box overflow-scroll">

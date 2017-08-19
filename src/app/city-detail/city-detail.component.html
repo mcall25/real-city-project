@@ -148,9 +148,7 @@
                   <div class="city-info-title-styles margin-bottom-15">This City is a {{buyOrSell}} Market</div>
                   <div class="margin-bottom-5 text-sm-white">The current average home price is $xxx,xxxx</div>
                   <div class="margin-bottom-15 text-sm-white">Want to learn more about this market? Want to advertise with us?</div>
-                  <form action="/email" method="get">
-                    <button type="submit" class="btn adv-btn">Learn More</button>
-                  </form>
+                  <button (click)="sendEmail()" type="submit" class="btn adv-btn">Learn More</button>
                 </div>
               </div>
               <div class="col-xs-6 ">

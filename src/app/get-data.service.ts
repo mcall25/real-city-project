@@ -188,7 +188,11 @@ export class getDataService {
 
   sendEmail() {
     console.log('hitting the endpint')
+    // var headers = new Headers();
+    // headers.append('Content-Type', 'application/json');
+
     return this.http.get('http://localhost:3000/email');
+
   }
 
 

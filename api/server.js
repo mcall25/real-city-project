@@ -21,14 +21,19 @@ connection.connect()
 
 
 // var corsOptions = {
-//   origin:'http://localhost:8000'
+//   origin:'http://localhost:3000'
 // }
 
 const app = express()
 
 
+
 // app.set('db', db);
 // app.use(cors(corsOptions));
+
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 
 // app.use(bodyParser.json());
 // app.use(express.static(__dirname + '/src'));

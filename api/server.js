@@ -68,13 +68,17 @@ transporter.verify(function(error, success) {
 });
 
 
-app.get('/email', function() {
+app.get('/email', function(req, res) {
   transporter.sendMail(mailOptions, function(error, info) {
     if (error) {
-      return console.log(error);
+      res.send(error);
+      // return console.log(error);
     }
-    console.log('Message %s sent: %s', info.messageId, info.response);
-    return {type: true}
+    else {
+      // console.log('Message %s sent: %s', info.messageId, info.response);
+      // return true
+      res.send('Message %s sent: %s', info.messageId, info.response);
+    }
   })
 });
 

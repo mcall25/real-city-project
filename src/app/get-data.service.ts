@@ -2,9 +2,15 @@
  * Created by codev on 7/25/17.
  */
 import {Injectable} from "@angular/core";
-import { Http, Headers } from '@angular/http';
+import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
+import {Observable} from 'rxjs/Rx';
 import { Router, ActivatedRoute } from '@angular/router';
+
+
+// Import RxJs required methods
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class getDataService {
@@ -47,61 +53,61 @@ export class getDataService {
 
   cities:any = [
     {title: 'Provo, Utah', id: 1},
-    {title: 'Dallas', id: 2},
-    {title: 'Fort Worth', id: 3},
-    {title: 'Frisco', id: 455},
-    {title: 'McKinney', id: 4},
-    {title: 'Arlington', id: 5},
-    {title: 'Little Elm', id: 6},
-    {title: 'Plano', id: 7},
-    {title: 'Irving', id: 8},
-    {title: 'Flower Mound', id: 9},
-    {title: 'Allen', id: 10},
-    {title: 'Garland', id: 11},
-    {title: 'Grand Prairie', id: 12},
-    {title: 'Prosper', id: 13},
-    {title: 'Denton', id: 14},
-    {title: 'Rockwall', id: 15},
-    {title: 'Colleyville', id: 16},
-    {title: 'Southlake', id: 17},
-    {title: 'Waxahachie', id: 18},
-    {title: 'Mansfield', id: 19},
-    {title: 'Cedar Hill', id: 20},
-    {title: 'Mesquite', id: 21},
-    {title: 'Rowlett', id: 22},
-    {title: 'Midlothian', id: 23},
-    {title: 'Keller', id: 24},
-    {title: 'The Colony', id: 25},
-    {title: 'Wylie', id: 26},
-    {title: 'Carrollton', id: 27},
-    {title: 'Lewisville', id: 28},
-    {title: 'Terrell', id: 29},
-    {title: 'Azle', id: 30},
-    {title: 'DeSotoDeSoto', id: 31},
-    {title: 'University Park', id: 32},
-    {title: 'Richardson', id: 33},
-    {title: 'Ennis', id: 34},
-    {title: 'Burleson', id: 35},
-    {title: 'Cleburne', id: 36},
-    {title: 'Coppell', id: 37},
-    {title: 'Weatherford', id: 38},
-    {title: 'Forney', id: 39},
-    {title: 'Greenville', id: 40},
-    {title: 'North Richland Hills', id: 41},
-    {title: 'Lancaster', id: 42},
-    {title: 'Sachse', id: 43},
-    {title: 'Euless', id: 44},
-    {title: 'Grapevine', id: 45},
-    {title: 'Duncanville', id: 46},
-    {title: 'Corinth', id: 47},
-    {title: 'Saginaw', id: 48},
-    {title: 'Benbrook', id: 49},
-    {title: 'Murphy', id: 50},
-    {title: 'Bedford', id: 51},
-    {title: 'Crowley', id: 52},
-    {title: 'Haltom City', id: 53},
-    {title: 'Hurst', id: 54},
-    {title: 'Watauga', id: 55}
+    {title: 'Dallas, Texas', id: 2},
+    {title: 'Fort Worth, Texas', id: 3},
+    {title: 'Frisco, Texas', id: 455},
+    {title: 'McKinney, Texas', id: 4},
+    {title: 'Arlington, Texas', id: 5},
+    {title: 'Little Elm, Texas', id: 6},
+    {title: 'Plano, Texas', id: 7},
+    {title: 'Irving, Texas', id: 8},
+    {title: 'Flower Mound, Texas', id: 9},
+    {title: 'Allen, Texas', id: 10},
+    {title: 'Garland, Texas', id: 11},
+    {title: 'Grand Prairie, Texas', id: 12},
+    {title: 'Prosper, Texas', id: 13},
+    {title: 'Denton, Texas', id: 14},
+    {title: 'Rockwall, Texas', id: 15},
+    {title: 'Colleyville, Texas', id: 16},
+    {title: 'Southlake, Texas', id: 17},
+    {title: 'Waxahachie, Texas', id: 18},
+    {title: 'Mansfield, Texas', id: 19},
+    {title: 'Cedar Hill, Texas', id: 20},
+    {title: 'Mesquite, Texas', id: 21},
+    {title: 'Rowlett, Texas', id: 22},
+    {title: 'Midlothian, Texas', id: 23},
+    {title: 'Keller, Texas', id: 24},
+    {title: 'The Colony, Texas', id: 25},
+    {title: 'Wylie, Texas', id: 26},
+    {title: 'Carrollton, Texas', id: 27},
+    {title: 'Lewisville, Texas', id: 28},
+    {title: 'Terrell, Texas', id: 29},
+    {title: 'Azle, Texas', id: 30},
+    {title: 'DeSoto, Texas', id: 31},
+    {title: 'University Park, Texas', id: 32},
+    {title: 'Richardson, Texas', id: 33},
+    {title: 'Ennis, Texas', id: 34},
+    {title: 'Burleson, Texas', id: 35},
+    {title: 'Cleburne, Texas', id: 36},
+    {title: 'Coppell, Texas', id: 37},
+    {title: 'Weatherford, Texas', id: 38},
+    {title: 'Forney, Texas', id: 39},
+    {title: 'Greenville, Texas', id: 40},
+    {title: 'North Richland Hills, Texas', id: 41},
+    {title: 'Lancaster, Texas', id: 42},
+    {title: 'Sachse, Texas', id: 43},
+    {title: 'Euless, Texas', id: 44},
+    {title: 'Grapevine, Texas', id: 45},
+    {title: 'Duncanville, Texas', id: 46},
+    {title: 'Corinth, Texas', id: 47},
+    {title: 'Saginaw, Texas', id: 48},
+    {title: 'Benbrook, Texas', id: 49},
+    {title: 'Murphy, Texas', id: 50},
+    {title: 'Bedford, Texas', id: 51},
+    {title: 'Crowley, Texas', id: 52},
+    {title: 'Haltom City, Texas', id: 53},
+    {title: 'Hurst, Texas', id: 54},
+    {title: 'Watauga, Texas', id: 55}
 
   ]
 
@@ -186,14 +192,31 @@ export class getDataService {
     }
   }
 
-  sendEmail() {
+  sendEmail():Observable <any> {
     console.log('hitting the endpint')
     // var headers = new Headers();
     // headers.append('Content-Type', 'application/json');
 
-    return this.http.get('http://localhost:3000/email');
+    var url = 'http://localhost:3000/email'
+    var headers = new Headers({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
+    var options = new RequestOptions({ headers: headers }); // Create a request option
+
+    return this.http.get(url, options)
+      .map((res:Response) => res.json())
+      .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
 
   }
+
+
+  // addComment (body: Object): Observable<Comment[]> {
+  //   let bodyString = JSON.stringify(body); // Stringify payload
+  //   let headers      = new Headers({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
+  //   let options       = new RequestOptions({ headers: headers }); // Create a request option
+  //
+  //   return this.http.post(this.commentsUrl, body, options) // ...using post request
+  //     .map((res:Response) => res.json()) // ...and calling .json() on the response to return data
+  //     .catch((error:any) => Observable.throw(error.json().error || 'Server error')); //...errors if any
+  // }
 
 
 }
